@@ -22,6 +22,9 @@ import {createDOMRef} from "@nextui-org/dom-utils";
 import {useOverlayTriggerState} from "@react-stately/overlays";
 import {OverlayTriggerProps} from "@react-stately/overlays";
 import {mergeRefs, mergeProps} from "@react-aria/utils";
+import {useLocalizedStringFormatter} from "@react-aria/i18n";
+
+import intlMessages from "../intl";
 
 interface Props extends HTMLNextUIProps<"section"> {
   /**
@@ -187,11 +190,12 @@ export function useModal(originalProps: UseModalProps) {
     [slots, classNames, underlayProps],
   );
 
+  const stringFormatter = useLocalizedStringFormatter(intlMessages);
   const getCloseButtonProps: PropGetter = () => {
     return {
       role: "button",
       tabIndex: 0,
-      "aria-label": "Close",
+      "aria-label": stringFormatter.format("dismiss"),
       "data-focus-visible": dataAttr(isCloseButtonFocusVisible),
       className: slots.closeButton({class: classNames?.closeButton}),
       ...mergeProps(closeButtonProps, closeButtonFocusProps),
