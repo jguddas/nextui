@@ -3,11 +3,10 @@ import type {HTMLMotionProps} from "framer-motion";
 
 import {AriaModalOverlayProps} from "@react-aria/overlays";
 import {useAriaModalOverlay} from "@nextui-org/use-aria-modal-overlay";
+import {useAriaDismissButton} from "@nextui-org/use-aria-dismiss-button";
 import {useCallback, useId, useRef, useState, useMemo, useImperativeHandle, ReactNode} from "react";
 import {modal} from "@nextui-org/theme";
 import {HTMLNextUIProps, mapPropsVariants, PropGetter} from "@nextui-org/system";
-import {useAriaButton} from "@nextui-org/use-aria-button";
-import {useFocusRing} from "@react-aria/focus";
 import {clsx, dataAttr} from "@nextui-org/shared-utils";
 import {ReactRef} from "@nextui-org/react-utils";
 import {createDOMRef} from "@nextui-org/react-utils";
@@ -129,12 +128,6 @@ export function useModal(originalProps: UseModalProps) {
     dialogRef,
   );
 
-  const {buttonProps: closeButtonProps} = useAriaButton({onPress: state.close}, closeButtonRef);
-  const {
-    isFocusVisible: isCloseButtonFocusVisible,
-    focusProps: closeButtonFocusProps,
-  } = useFocusRing();
-
   const baseStyles = clsx(className, classNames?.base);
 
   const slots = useMemo(
@@ -167,14 +160,19 @@ export function useModal(originalProps: UseModalProps) {
     [slots, classNames, underlayProps],
   );
 
+  const {dismissButtonProps: closeButtonProps} = useAriaDismissButton(
+    {
+      onPress: state.close,
+      extendsLabel: "Modal",
+      extendsLabeledBy: headerMounted ? headerId : undefined,
+    },
+    closeButtonRef,
+  );
+
   const getCloseButtonProps: PropGetter = () => {
     return {
-      role: "button",
-      tabIndex: 0,
-      "aria-label": "Close",
-      "data-focus-visible": dataAttr(isCloseButtonFocusVisible),
+      ...closeButtonProps,
       className: slots.closeButton({class: classNames?.closeButton}),
-      ...mergeProps(closeButtonProps, closeButtonFocusProps),
     };
   };
 

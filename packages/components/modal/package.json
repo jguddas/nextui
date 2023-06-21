@@ -34,37 +34,38 @@
     "postpack": "clean-package restore"
   },
   "peerDependencies": {
-    "react": ">=18",
-    "framer-motion": ">=4.0.0"
+    "framer-motion": ">=4.0.0",
+    "react": ">=18"
   },
   "dependencies": {
-    "@nextui-org/system": "workspace:*",
-    "@nextui-org/theme": "workspace:*",
-    "@nextui-org/use-disclosure": "workspace:*",
-    "@nextui-org/use-aria-button": "workspace:*",
     "@nextui-org/framer-transitions": "workspace:*",
-    "@nextui-org/shared-utils": "workspace:*",
     "@nextui-org/react-utils": "workspace:*",
     "@nextui-org/shared-icons": "workspace:*",
+    "@nextui-org/shared-utils": "workspace:*",
+    "@nextui-org/system": "workspace:*",
+    "@nextui-org/theme": "workspace:*",
+    "@nextui-org/use-aria-button": "workspace:*",
+    "@nextui-org/use-aria-dismiss-button": "workspace:2.0.0-beta.1",
     "@nextui-org/use-aria-modal-overlay": "workspace:*",
+    "@nextui-org/use-disclosure": "workspace:*",
     "@react-aria/dialog": "^3.5.2",
+    "@react-aria/focus": "^3.12.1",
     "@react-aria/interactions": "^3.15.1",
     "@react-aria/overlays": "^3.14.1",
     "@react-aria/utils": "^3.17.0",
     "@react-stately/overlays": "^3.5.2",
-    "@react-aria/focus": "^3.12.1",
     "@react-types/overlays": "^3.7.2",
     "react-remove-scroll": "^2.5.6"
   },
   "devDependencies": {
-    "@nextui-org/input": "workspace:*",
-    "@nextui-org/checkbox": "workspace:*",
     "@nextui-org/button": "workspace:*",
+    "@nextui-org/checkbox": "workspace:*",
+    "@nextui-org/input": "workspace:*",
     "@nextui-org/link": "workspace:*",
-    "react-lorem-component": "0.13.0",
-    "framer-motion": "^10.12.16",
     "clean-package": "2.2.0",
-    "react": "^18.0.0"
+    "framer-motion": "^10.12.16",
+    "react": "^18.0.0",
+    "react-lorem-component": "0.13.0"
   },
   "clean-package": "../../../clean-package.config.json"
 }

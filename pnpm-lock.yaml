@@ -1147,6 +1147,9 @@ importers:
       '@nextui-org/use-aria-button':
         specifier: workspace:*
         version: link:../../hooks/use-aria-button
+      '@nextui-org/use-aria-dismiss-button':
+        specifier: workspace:2.0.0-beta.1
+        version: link:../../hooks/use-aria-dismiss-button
       '@nextui-org/use-aria-modal-overlay':
         specifier: workspace:*
         version: link:../../hooks/use-aria-modal-overlay
@@ -1302,6 +1305,9 @@ importers:
       '@react-aria/focus':
         specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
+      '@react-aria/i18n':
+        specifier: ^3.7.2
+        version: 3.7.2(react@18.2.0)
       '@react-aria/interactions':
         specifier: ^3.15.1
         version: 3.15.1(react@18.2.0)
@@ -2119,6 +2125,34 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
 
+  packages/hooks/use-aria-dismiss-button:
+    dependencies:
+      '@nextui-org/shared-utils':
+        specifier: workspace:0.0.0-dev-v2-20230620194547
+        version: link:../../utilities/shared-utils
+      '@nextui-org/use-aria-button':
+        specifier: 2.0.0-beta.1
+        version: 2.0.0-beta.1(react@18.2.0)
+      '@react-aria/button':
+        specifier: ^3.7.2
+        version: 3.7.2(react@18.2.0)
+      '@react-aria/focus':
+        specifier: ^3.12.1
+        version: 3.12.1(react@18.2.0)
+      '@react-aria/i18n':
+        specifier: ^3.7.2
+        version: 3.7.2(react@18.2.0)
+      '@react-aria/utils':
+        specifier: ^3.17.0
+        version: 3.17.0(react@18.2.0)
+    devDependencies:
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+
   packages/hooks/use-aria-field:
     dependencies:
       '@nextui-org/use-aria-label':
@@ -2258,6 +2292,31 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0
 
+  packages/hooks/use-dismiss-button:
+    dependencies:
+      '@nextui-org/shared-utils':
+        specifier: workspace:*
+        version: link:../../utilities/shared-utils
+      '@react-aria/button':
+        specifier: ^3.7.2
+        version: 3.7.2(react@18.2.0)
+      '@react-aria/focus':
+        specifier: ^3.12.1
+        version: 3.12.1(react@18.2.0)
+      '@react-aria/i18n':
+        specifier: ^3.7.2
+        version: 3.7.2(react@18.2.0)
+      '@react-aria/utils':
+        specifier: ^3.17.0
+        version: 3.17.0(react@18.2.0)
+    devDependencies:
+      clean-package:
+        specifier: 2.2.0
+        version: 2.2.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+
   packages/hooks/use-image:
     dependencies:
       '@nextui-org/use-safe-layout-effect':
@@ -2385,6 +2444,104 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+
+  packages/react/lib/avatar: {}
+
+  packages/react/lib/backdrop: {}
+
+  packages/react/lib/badge: {}
+
+  packages/react/lib/button: {}
+
+  packages/react/lib/card: {}
+
+  packages/react/lib/checkbox: {}
+
+  packages/react/lib/code: {}
+
+  packages/react/lib/col: {}
+
+  packages/react/lib/collapse: {}
+
+  packages/react/lib/container: {}
+
+  packages/react/lib/css-baseline: {}
+
+  packages/react/lib/divider: {}
+
+  packages/react/lib/dropdown: {}
+
+  packages/react/lib/grid: {}
+
+  packages/react/lib/image: {}
+
+  packages/react/lib/input: {}
+
+  packages/react/lib/link: {}
+
+  packages/react/lib/loading: {}
+
+  packages/react/lib/modal: {}
+
+  packages/react/lib/navbar: {}
+
+  packages/react/lib/pagination: {}
+
+  packages/react/lib/popover: {}
+
+  packages/react/lib/progress: {}
+
+  packages/react/lib/radio: {}
+
+  packages/react/lib/row: {}
+
+  packages/react/lib/snippet: {}
+
+  packages/react/lib/spacer: {}
+
+  packages/react/lib/switch: {}
+
+  packages/react/lib/table: {}
+
+  packages/react/lib/text: {}
+
+  packages/react/lib/textarea: {}
+
+  packages/react/lib/tooltip: {}
+
+  packages/react/lib/use-body-scroll: {}
+
+  packages/react/lib/use-click-anywhere: {}
+
+  packages/react/lib/use-click-away: {}
+
+  packages/react/lib/use-clipboard: {}
+
+  packages/react/lib/use-current-state: {}
+
+  packages/react/lib/use-drip: {}
+
+  packages/react/lib/use-input: {}
+
+  packages/react/lib/use-intersection-observer: {}
+
+  packages/react/lib/use-keyboard: {}
+
+  packages/react/lib/use-portal: {}
+
+  packages/react/lib/use-real-shape: {}
+
+  packages/react/lib/use-resize: {}
+
+  packages/react/lib/use-scroll-position: {}
+
+  packages/react/lib/use-ssr: {}
+
+  packages/react/lib/use-theme: {}
+
+  packages/react/lib/user: {}
+
+  packages/react/lib/utils: {}
 
   packages/storybook:
     dependencies:
@@ -4752,7 +4909,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.5
       '@types/react': 18.2.8
-      clsx: 1.1.0
+      clsx: 1.2.1
       focus-lock: 0.8.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -5813,6 +5970,17 @@ packages:
     os: [win32]
     requiresBuild: true
     optional: true
+
+  /@nextui-org/use-aria-button@2.0.0-beta.1(react@18.2.0):
+    resolution: {integrity: sha512-KNnJtOq9+2d0myuYIPYJ39uzOH6xuy38mFg/Hs3S4nC06HCJUdFZnmguoPU9z3W+LR4J2ZR1OOVNbtRx4uqv8w==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@react-aria/focus': 3.12.1(react@18.2.0)
+      '@react-aria/interactions': 3.15.1(react@18.2.0)
+      '@react-aria/utils': 3.17.0(react@18.2.0)
+      react: 18.2.0
+    dev: false
 
   /@nicolo-ribaudo/chokidar-2@2.1.8-no-fsevents.2:
     resolution: {integrity: sha512-Fb8WxUFOBQVl+CX4MWet5o7eCc6Pj04rXIwVKZ6h1NnqTo45eOQW6aWyhG25NIODvWFwTDMwBsYxrQ3imxpetg==}
