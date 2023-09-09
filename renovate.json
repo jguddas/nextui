@@ -12,6 +12,7 @@
   "schedule": ["after 1am and before 10am on Monday"],
   "labels": ["dependencies"],
   "automerge": true,
+  "includeForks": true,
   "packageRules": [
     {
       "matchPackagePatterns": ["@react-aria", "@react-types", "@react-stately"],
